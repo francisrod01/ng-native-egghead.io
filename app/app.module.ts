@@ -3,6 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
+import { TapButtonComponent } from './tap-button/tap-button.component';
 import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
@@ -23,6 +24,7 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     ],
     declarations: [
         AppComponent,
+        TapButtonComponent,
         ItemsComponent,
         ItemDetailComponent
     ],
