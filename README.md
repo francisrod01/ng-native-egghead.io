@@ -29,6 +29,28 @@ If you want to create a new app that uses the source of the template from the `m
 
 **NB:** Please, have in mind that the master branch may refer to dependencies that are not on NPM yet!
 
+## NativeScript live reloading ##
+
+You can watch changes in files in development mode to compile faster.
+
+Using the `--emulator` flag running in emulator:
+
+```bash
+~$ tns run android --emulator --watch
+```
+
+Without `--emulator` flag running in device and emulator in the same time:
+
+```bash
+~$ tns run android --watch
+```
+
+Without platform specified it will run run on all connected devices and emulators:
+
+```bash
+~$ tns run --watch
+```
+
 ## License ##
 
 MIT
