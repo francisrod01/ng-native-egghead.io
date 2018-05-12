@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {RouterExtensions} from 'nativescript-angular/router';
 
 
 @Component({
@@ -7,4 +8,10 @@ import {Component} from '@angular/core';
   templateUrl: './details.component.html'
 })
 
-export class DetailsComponent {}
+export class DetailsComponent {
+  constructor(private router: RouterExtensions) { }
+
+  public goBack(): void {
+    this.router.back();
+  }
+}
