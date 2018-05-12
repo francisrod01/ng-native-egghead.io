@@ -1,0 +1,9 @@
+<StackLayout>
+    <GridLayout rows="auto" columns="*,*">
+        <Button text="Dashboard" [nsRouterLink]="['/home']" class="btn" row="0" col="0"></Button>
+        <Button text="About" nsRouterLink="/home/about" class="btn" row="0" col="1"></Button>
+    </GridLayout>
+    <StackLayout>
+        <router-outlet></router-outlet>
+    </StackLayout>
+</StackLayout>
