@@ -1,11 +1,21 @@
-<StackLayout>  
+<StackLayout>
   <GridLayout rows="auto" columns="75,*,75" class="action-bar p-1o">
       <Button text="Close" (tap)="close()" row="0" col="0" class="action-item"></Button>
       <Label text="Detail" textWrap="true" row="0" col="1" class="action-bar-title text-center"></Label>
   </GridLayout>
 
-  <StackLayout class="p-10">
-      <Label text="Detailed info" class="h1"></Label>
-      <Label text="Even more awesome video workshops and info." class="h3" textWrap="true"></Label>
-  </StackLayout>
+  <ListView
+    [items]="items"
+    (loaded)="onLoaded(event)"
+    (itemLoading)="onItemLoading(event)"
+    (itemTap)="onItemTap(event)"
+    class="list-group"
+    ios:height="100%"
+    android:height="75%">
+      <ng-template let-item="item" let-odd="odd" let-even="even">
+        <StackLayout>
+          <Label [text]="item.title" class="list-group-item"></Label>
+        </StackLayout>
+      </ng-template>
+  </ListView>
 </StackLayout>
