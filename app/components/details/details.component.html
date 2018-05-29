@@ -5,7 +5,7 @@
   </GridLayout>
 
   <ListView
-    [items]="items"
+    [items]="items$ | async"
     (loaded)="onLoaded(event)"
     (itemLoading)="onItemLoading(event)"
     (itemTap)="onItemTap(event)"

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterExtensions} from 'nativescript-angular/router';
 import {ModalDialogParams} from 'nativescript-angular/directives/dialogs';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 
 @Component({
@@ -10,15 +11,28 @@ import {ModalDialogParams} from 'nativescript-angular/directives/dialogs';
 })
 
 export class DetailsComponent {
-  public items: any[] = [
-    { title: 'NativeScript' },
-    { title: 'Angular' },
-    { title: 'TypeScript' },
-    { title: 'JavaScript' }
-  ];
+  public items$: BehaviorSubject<Array<any>> = new BehaviorSubject([]);
 
   constructor(private router: RouterExtensions, private params: ModalDialogParams) {
     console.log('constructor params: ', params.context.msg);
+
+    const items: any[] = [
+      { title: 'NativeScript' },
+      { title: 'Angular' },
+      { title: 'TypeScript' },
+      { title: 'JavaScript' }
+    ];
+
+    let cnt = 0;
+    let timer = setInterval(() => {
+      if (cnt < 4) {
+        this.items$.next([...this.items$.getValue(), items[cnt]]);
+        cnt++;
+      }
+      else {
+        clearInterval(timer);
+      }
+    }, 1000);
   }
 
   public onLoaded(e) {
