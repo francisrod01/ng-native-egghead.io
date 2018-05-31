@@ -24,6 +24,10 @@ yarn.lock
 tmp/
 platforms/
 
+# Generated CSS
+app/app.android.css
+app/app.ios.css
+
 # IDEs and editors
 /.idea
 .project
