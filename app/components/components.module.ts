@@ -1,4 +1,4 @@
-import {NativeScriptModule} from 'nativescript-angular/nativescript.module';
+import {NativeScriptCommonModule} from 'nativescript-angular/common';
 import {NativeScriptRouterModule} from 'nativescript-angular/router';
 import {NgModule} from '@angular/core';
 import {Routes} from '@angular/router';
@@ -27,7 +27,7 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [
-    NativeScriptModule,
+    NativeScriptCommonModule,
     NativeScriptRouterModule
   ],
   declarations: [
@@ -35,7 +35,6 @@ export const routes: Routes = [
   ],
   exports: [
     COMPONENTS,
-    NativeScriptModule,
     NativeScriptRouterModule
   ]
 })
