@@ -1,0 +1,8 @@
+{
+  "editor.tabSize": 4,
+  "editor.trimAutoWhitespace": false,
+  "files.trimTrailingWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "typescript.format.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
